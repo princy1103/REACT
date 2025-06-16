@@ -1,28 +1,45 @@
-import { useState } from "react";
-import React from 'react'
-
+import { useState, useEffect } from "react";
 const Stopwatch = () => {
-    let [count, setCount] = useState(0)
+    const [count, setCount] = useState(0);
+    const [current, setCurrent] = useState(false);
 
-    const Increment = setInterval(() => {
-        // return setCount(count++);   
-    },1000)
-    const Stop = () => {
+    useEffect(() => {
+        let value = null;
 
-    }
-    const Reset = () => {
+        if (current) {
+            value = setInterval(() => {
+                setCount(count => count + 1);
+            }, 1000);
+        } else {
+            clearInterval(value);
+        }
 
-    }
+        return (
+            () => clearInterval(value)
+        );
+
+    }, [current]);
+
+    const start = () => {
+        setCurrent(true)
+    };
+    const stop = () => {
+        setCurrent(false)
+    };
+    const reset = () => {
+        setCurrent(false);
+        setCount(0);
+    };
+
     return (
         <>
             <h2>Stopwatch</h2>
-
             <h3>{count}</h3>
-            <button onClick={Increment}>START</button>
-            <button>STOP</button>
-            <button>RESET</button>
+            <button onClick={start}>START</button>
+            <button onClick={stop}>STOP</button>
+            <button onClick={reset}>RESET</button>
         </>
-    )
-}
+    );
+};
 
-export default Stopwatch
+export default Stopwatch;
