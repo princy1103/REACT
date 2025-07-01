@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 50px 0px 0px 0px ;
+  font-family: sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+/* Light Theme */
+.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+.switch{
+  width: 500px ;
+  height: 400px;
+  border: 2px solid black;
+  margin: auto;
+}
+img{
+  width: 300px;
+
+}
+/* Dark Theme */
+.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
