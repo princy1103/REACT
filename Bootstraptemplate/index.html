@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./src/assets/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grayscale - Start Bootstrap Theme</title>
+  <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', event => {
+
+      // Navbar shrink function
+      var navbarShrink = function () {
+        const navbarCollapsible = document.body.querySelector('#mainNav');
+        if (!navbarCollapsible) {
+          return;
+        }
+        if (window.scrollY === 0) {
+          navbarCollapsible.classList.remove('navbar-shrink')
+        } else {
+          navbarCollapsible.classList.add('navbar-shrink')
+        }
+
+      };
+
+      // Shrink the navbar 
+      navbarShrink();
+
+      // Shrink the navbar when page is scrolled
+      document.addEventListener('scroll', navbarShrink);
+
+      // Activate Bootstrap scrollspy on the main nav element
+      const mainNav = document.body.querySelector('#mainNav');
+      if (mainNav) {
+        new bootstrap.ScrollSpy(document.body, {
+          target: '#mainNav',
+          rootMargin: '0px 0px -40%',
+        });
+      };
+
+      // Collapse responsive navbar when toggler is visible
+      const navbarToggler = document.body.querySelector('.navbar-toggler');
+      const responsiveNavItems = [].slice.call(
+        document.querySelectorAll('#navbarResponsive .nav-link')
+      );
+      responsiveNavItems.map(function (responsiveNavItem) {
+        responsiveNavItem.addEventListener('click', () => {
+          if (window.getComputedStyle(navbarToggler).display !== 'none') {
+            navbarToggler.click();
+          }
+        });
+      });
+
+    });
+  </script>
+</body>
+
+</html>
