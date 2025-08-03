@@ -36,13 +36,12 @@ const ProductList=()=>{
                                     <div>
                                         <button className="bg-primary text-white p-2 mt-2" onClick={()=>dispatch(addTocart(item.id))}>Add Cart</button>
                                     </div>
-                                </div>
+                                </div>  
                             )
                         })
                     }
                 </div>
             </div>
-        
         </>
     )
     
