@@ -1,0 +1,91 @@
+/* 
+nav {
+  width: 400px;
+  padding: 10px;
+  margin: auto;
+  background: #eee;
+}
+
+nav a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+.students-container {
+  padding: 20px;
+}
+
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.student-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background: white;
+  color: black;
+}
+
+.student-card h3 {
+  margin-bottom: 5px;
+}
+
+
+}
+ */
+nav{
+  margin: auto;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  width: 100%;
+  /* height: 50px; */
+  text-align: center;
+  padding: 15px 0px;
+}
+nav a{
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 20px;
+}
+nav a:hover{
+  color:bisque;
+}
+form{
+  width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+input{
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  margin: 5px;
+}
+.students-container {
+  padding: 20px;
+}
+
+.student-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.student-card {
+  width: 250px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.282);
+  color: white;
+}
